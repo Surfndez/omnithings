@@ -11,7 +11,7 @@
 
 	function goConnection(){
 		if(client != null){ return false;}
-		client = new Paho.MQTT.Client("127.0.0.1", 9090, $("#client").val());
+		client = new Paho.MQTT.Client($("#server").val(),  parseInt($("#port").val()), $("#client").val());
 			// set callback handlers
 		client.onConnectionLost = onConnectionLost;
 		client.onMessageArrived = onMessageArrived;
@@ -69,6 +69,7 @@
 </head>
 <body>
 <h1>MQTT Client Test</h1>
+<input type="text" id="server" style="width: 150px;" placeholder="SERVER"><input type="text" id="port" style="width: 50px;" placeholder="PORT"><br/>
 <input type="text" id="topic" style="width: 300px;" placeholder="TOPIC"><br/>
 <input type="text" id="client" style="width: 300px;" placeholder="Client ID"><br/>
 <input type="text" id="uid" style="width: 300px;" placeholder="User ID"><br/>
