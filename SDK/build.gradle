@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+compileJava.options.encoding = "UTF-8"
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	providedRuntime
+}
+
+dependencies {
+	compile "com.mashape.unirest:unirest-java:1.4.9"
+	compile 'log4j:log4j:1.2.17'
+	compile 'org.apache.commons:commons-lang3:3.4'
+	compile 'commons-logging:commons-logging:1.2'
+	compile "com.google.code.gson:gson:2.1"
+	compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+}
+
