@@ -19,3 +19,5 @@ def authorization(key):
     return "signature_method=\"HMAC-SHA1\",timestamp=\""+timestamp+"\",nonce=\""+nonce+"\",signature=\""+signature+"\""
 
 
+if __name__=='__main__':
+    print(authorization("12345678"))
